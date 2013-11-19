@@ -56,11 +56,11 @@ public class RungeKutta {
 			}
 
 			// Print out the result that we get.
-			System.out.println("Using 4th order Runge-Kutta "
-					+ "The final slope value is:");
-			System.out.println(y);
+//			System.out.println("Using 4th order Runge-Kutta "
+//					+ "The final slope value is:");
+//			System.out.println(y);
 			// Print out the average error.
-			System.out.println("The average error is: " + sumError / h);
+//			System.out.println("The average error is: " + sumError / h);
 			
 			return y;
 		}
