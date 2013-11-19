@@ -9,12 +9,7 @@ public class RungeKutta {
 		static double stiffness = 1;
 		static double damping = -0.005;
 		
-		// The derivative dy/dx at a given value of x and y.
-		public static double deriv(double a, double x, double y) {
-			return a = -stiffness * x - damping * y;
-		}
-
-		public double RK4() {
+		public double RK4(Function f) {
 
 			final double amplitude = 5.0; // Max. amplititude for the oscillator									
 			double h = 1.0 / STEPS; // timestep
@@ -36,16 +31,16 @@ public class RungeKutta {
 				// Computing all of the trial values
 				// calculating coefficients with the Runge-Kutte 4th order
 
-				k1y = h * deriv(timeCurr, x, y);
+				k1y = h * f.fun(timeCurr, x, y);
 				k1x = y * h;
 
-				k2y = h * deriv(timeCurr, x + h / 2, y + k1x / 2);
+				k2y = h * f.fun(timeCurr, x + h / 2, y + k1x / 2);
 				k2x = h * (y + k1y / 2);
 
-				k3y = h * deriv(timeCurr, x + h / 2, y + k2x / 2);
+				k3y = h * f.fun(timeCurr, x + h / 2, y + k2x / 2);
 				k3x = h * (k2y / 2);
 
-				k4y = h * deriv(timeCurr, x + h, y + k3x);
+				k4y = h * f.fun(timeCurr, x + h, y + k3x);
 				k4x = h * (y + k3x);
 
 				// Incrementing x and y.Calc new position and velocity values
