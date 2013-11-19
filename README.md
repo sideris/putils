@@ -7,14 +7,14 @@ The user needs to use this as a package for his benefit.
 
 To define the wanted function for integration one has to create a version of the interface Function:
 
-  new Function() {
-    //you can add more than one double numbers; since it's an interface 
-    //it is easy to overwrite
-        public double fun(double n) {
-          //sample function. change it to the wanted
-          return n*Math.sqrt(1-n);
-        }
-      }
+      new Function() {
+        //you can add more than one double numbers; since it's an interface 
+        //it is easy to overwrite
+            public double fun(double n) {
+              //sample function. change it to the wanted
+              return n*Math.sqrt(1-n);
+            }
+          }
       
 Disclaimer
 ==========
