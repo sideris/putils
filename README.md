@@ -5,7 +5,7 @@ A library in Java for Numerical Methods. It include's Euler's method, Quadratic,
 
 The user needs to use this as a package for his benefit. 
 
-To define the wanted function for integration one has to create a version of the interface Function:
+To define the wanted function (e.g. for integration) one has to create a version of the interface Function:
 
       new Function() {
         //you can add more than one double numbers; since it's an interface 
