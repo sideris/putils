@@ -1,7 +1,7 @@
-Numerical Integration Library
+Numerical Library
 =============================
 
-A library in Java for Numerical Integration. It include's Euler's method, Quadratic, Simpson's etc.
+A library in Java for Numerical Methods. It include's Euler's method, Quadratic, Simpson's etc.
 
 The user needs to use this as a package for his benefit. 
 
@@ -21,4 +21,5 @@ Disclaimer
 
 Most of the code is NOT mine. I, however, have changed the code to make it more readable and to be able to run with my configuration. I include the source at the beginning of each class
 
+The user has to know how the methods work. Finally, report any bugs you find
 
