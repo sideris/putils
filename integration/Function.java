@@ -1,2 +1,2 @@
 package integration;
-interface Function{double fun(double... n);}
+public interface Function{double fun(double... n);}
