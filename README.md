@@ -25,8 +25,19 @@ To define the wanted function (e.g. for integration) one has to create a Class i
             }
           }
       
+
+TODO
+====
+
+1. Search
+2. Sort
+3. Trees
+4. Documentation
+5. Unit tests
+6. Builds
+7. -Write this-
+
 Disclaimer
 -----------
 
 Some of the code is NOT mine. I, however, have changed the code to make it more readable and to my preferred style. I include the source at the beginning of each class. Intending to add docs in the future.
-
