@@ -35,7 +35,7 @@ TODO
 4. Documentation
 5. Unit tests
 6. Builds
-7. ~Write this~
+7. ~~Write this~~
 
 Disclaimer
 -----------
