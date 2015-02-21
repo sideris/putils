@@ -1,6 +1,6 @@
-#Numerical Library
+#PUTILS
 
-A library in Java for various auxiliary functions and utilities. Includes Math, Trees, Sorting, Searching and more fun stuff to be added.
+A lightweight library in Java providing various auxiliary functions and utilities. Includes Math, Trees, Sorting, Searching and more fun stuff to be added.
 
 ####Why another Util library you say?
 
