@@ -1,4 +1,4 @@
-package integration;
+package math.integration;
 
 public class Euler {
 	public double euler(double initial, double cuttoff, double step, Function fun){
@@ -8,7 +8,7 @@ public class Euler {
 		
 		while( (next - current) > cuttoff ){
 			current = next;
-			next = current + step*fun.fun(t);
+			next = current + step*fun.function(t);
 			t+=step;
 		}
 		return next;

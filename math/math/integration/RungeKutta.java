@@ -1,4 +1,4 @@
-package integration;
+package math.integration;
 /**
  * http://fab.cba.mit.edu/classes/MAS.864/people/rachelle.villalon/pset4/rungeKuttaRV.java
  * **/
@@ -31,32 +31,23 @@ public class RungeKutta {
 				// Computing all of the trial values
 				// calculating coefficients with the Runge-Kutte 4th order
 
-				k1y = h * f.fun(timeCurr, x, y);
+				k1y = h * f.function(timeCurr, x, y);
 				k1x = y * h;
 
-				k2y = h * f.fun(timeCurr, x + h / 2, y + k1x / 2);
+				k2y = h * f.function(timeCurr, x + h / 2, y + k1x / 2);
 				k2x = h * (y + k1y / 2);
 
-				k3y = h * f.fun(timeCurr, x + h / 2, y + k2x / 2);
+				k3y = h * f.function(timeCurr, x + h / 2, y + k2x / 2);
 				k3x = h * (k2y / 2);
 
-				k4y = h * f.fun(timeCurr, x + h, y + k3x);
+				k4y = h * f.function(timeCurr, x + h, y + k3x);
 				k4x = h * (y + k3x);
-
 				// Incrementing x and y.Calc new position and velocity values
 				y += k1y / 6 + k2y / 3 + k3y / 3 + k4y / 6;
 				x += k1x / 6 + k2x / 3 + k3x / 3 + k4x / 6;
 				timeCurr += h;
 				sumError += 0;
 			}
-
-			// Print out the result that we get.
-//			System.out.println("Using 4th order Runge-Kutta "
-//					+ "The final slope value is:");
-//			System.out.println(y);
-			// Print out the average error.
-//			System.out.println("The average error is: " + sumError / h);
-			
 			return y;
 		}
 }

@@ -1,4 +1,4 @@
-package integration;
+package math.integration;
 /**
  * http://rosettacode.org/wiki/Numerical_integration
  * */
@@ -21,12 +21,10 @@ public class Rectangular {
 		    double range = checkParamsGetRange(a, b, n);
 		    double modeOffset = (double) mode / 2.0;
 		    double nFloat = (double) n, sum = 0.0;
-		    
 		    for (int i = 0; i < n; i++) {
 		      double x = a + range * ((double)i + modeOffset) / nFloat;
-		      sum += f.fun(x);
+		      sum += f.function(x);
 		    }
-		    
 		    return sum * range / nFloat;
 	  }
 	  
@@ -36,25 +34,25 @@ public class Rectangular {
 
 	    for (int i = 1; i < n; i++){
 	      double x = a + range * (double)i / nFloat;
-	      sum += f.fun(x);
+	      sum += f.function(x);
 	    }
 	    
-	    sum += (f.fun(a) + f.fun(b)) / 2.0;
+	    sum += (f.function(a) + f.function(b)) / 2.0;
 	    return sum * range / nFloat;
 	  }
 	 
 	  public static double simpsons(double a, double b, int n, Function f){
 	    double range = checkParamsGetRange(a, b, n);
 	    double nFloat = (double)n;
-	    double sum1 = f.fun(a + range / (nFloat * 2.0));
+	    double sum1 = f.function(a + range / (nFloat * 2.0));
 	    double sum2 = 0.0;
 	    for (int i = 1; i < n; i++){
 	      double x1 = a + range * ((double)i + 0.5) / nFloat;
-	      sum1 += f.fun(x1);
+	      sum1 += f.function(x1);
 	      double x2 = a + range * (double)i / nFloat;
-	      sum2 += f.fun(x2);
+	      sum2 += f.function(x2);
 	    }
-	    return (f.fun(a) + f.fun(b) + sum1 * 4.0 + sum2 * 2.0) * range / (nFloat * 6.0);
+	    return (f.function(a) + f.function(b) + sum1 * 4.0 + sum2 * 2.0) * range / (nFloat * 6.0);
 	  }
 	 
 	  private static double checkParamsGetRange(double a, double b, int n){
