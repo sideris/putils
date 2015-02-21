@@ -23,3 +23,4 @@ interface Tree<T> {
 	TreeNode<T> searchPostOrderDFS(T value);
 	void setRoot(TreeNode<T> node);
 }
+
