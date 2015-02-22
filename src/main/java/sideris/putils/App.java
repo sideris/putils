@@ -1,6 +1,6 @@
 package sideris.putils;
 
-import sorsideris.putils.sort.Sorter;
+import sideris.putils.sort.Sorter;
 
 /**
  * Hello world!
