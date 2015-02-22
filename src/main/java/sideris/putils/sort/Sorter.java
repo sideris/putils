@@ -13,6 +13,51 @@ public class Sorter<T> {
 		this.comp = (Comparator<T>) new MyIntComparable();
 	}
 	
+	private void merge(T[] l, T[] r, T[] A){
+		int sizeLeft = l.length;
+		int sizeRight = r.length;
+		int i = 0, j = 0, k =0;
+		
+		while(i < sizeLeft && j < sizeRight){
+			if(comp.compare(l[i], r[j]) <= 0){
+				A[k] = l[i];
+				i++;
+			}else{
+				A[k] = r[j];
+				j++;
+			}
+			k++;
+		}
+		
+		while(i < sizeLeft){
+			A[k] = l[i];
+			i++;
+			k++;
+		}
+		
+		while(j < sizeRight){
+			A[k] = r[j];
+			j++;
+			k++;
+		}
+	}
+	
+	public void mergesort(T[] A){
+		int size = A.length;
+		if(size < 2 ) return;
+		int mid = size / 2;
+		T[] a = (T[]) new Object[10];
+		T[] left = (T[]) new Object[mid];
+		T[] right = (T[]) new Object[size - mid];
+		for(int i = 0; i < size; i++){
+			if(i < mid) left[i] = A[i];
+			else right[i - mid] = A[i];
+		}
+		mergesort(left);
+		mergesort(right);
+		merge(left, right, A);
+	}
+	
 	private int partition(T[] A, int start, int end){
 		T pivot = A[end];
 		int pIndex = start;
