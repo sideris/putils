@@ -1,6 +1,7 @@
 package sideris.putils.sort;
 
 import java.util.Comparator;
+import java.util.Random;
 
 public class Sorter<T> {
 	private Comparator<T> comp;
@@ -59,33 +60,40 @@ public class Sorter<T> {
 	}
 	
 	private int partition(T[] A, int start, int end){
-		T pivot = A[end];
-		int pIndex = start;
+		int pivotInd = end;  //can replace with random here
+		T pivot = A[pivotInd];
+		int partIndex = start;
 		for(int i = start; i < end; i++){
 			if(comp.compare(A[i], pivot) <= 0){
 				T tmp = A[i];
-				A[i] = A[pIndex];
-				A[pIndex] = tmp;
-				pIndex++;
+				A[i] = A[partIndex];
+				A[partIndex] = tmp;
+				partIndex++;
 			}
 		}
-		T tmp = A[pIndex];
-		A[pIndex] = A[end];
+		T tmp = A[partIndex];
+		A[partIndex] = A[pivotInd];
 		A[end] = tmp;
-		return pIndex;
+		return partIndex;
 	}
 	
 	public void quicksort(T[] arr, int start, int end){
 		if(start >= end) return;
-		int pIndex = partition(arr, start, end);
-		quicksort(arr, start, pIndex - 1);
-		quicksort(arr, pIndex + 1, end);
+		int partIndex = partition(arr, start, end);
+		quicksort(arr, start, partIndex - 1);
+		quicksort(arr, partIndex + 1, end);
 	}
 	
-	class MyIntComparable implements Comparator<Integer>{
+	private class MyIntComparable implements Comparator<Integer>{
 		 
 	    public int compare(Integer o1, Integer o2) {
 	        return (o1>o2 ? 1 : (o1==o2 ? 0 : -1));
 	    }
 	} 
+	
+	private int randInt(int min, int max) {
+	    Random rand = new Random();
+	    int randomNum = rand.nextInt((max - min) + 1) + min;
+	    return randomNum;
+	}
 }
