@@ -52,7 +52,9 @@ public class Sorter {
 	}
 	
 	private static int partition(Comparable[] A, int start, int end){
-		int pivotInd = end;  //can replace with random here
+	    Random rand = new Random();
+	    int pivotInd = start + rand.nextInt(end - start);
+//	    int pivotInd = end;  //can replace with random here
 		Comparable pivot = A[pivotInd];
 		int partIndex = start;
 		for(int i = start; i < end; i++){
@@ -81,9 +83,4 @@ public class Sorter {
 		quicksort(arr, start, end);
 	}
 
-	private int randInt(int min, int max) {
-	    Random rand = new Random();
-	    int randomNum = rand.nextInt((max - min) + 1) + min;
-	    return randomNum;
-	}
 }
