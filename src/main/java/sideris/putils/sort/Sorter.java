@@ -5,6 +5,15 @@ import java.util.Random;
 
 public class Sorter {
 	
+	public static void heapSort(Comparable[] arr){
+		 HeapSorter.sort(arr);
+	}
+	
+	/**Merge sort
+	 * merge -> merges two arrays, in a sorted fashion, in a containing array
+	 * mergesort -> the mergesort algorithm. 
+	 * **/
+	
 	private static void merge(Comparable[] l, Comparable[] r, Comparable[] A){
 		int sizeLeft = l.length;
 		int sizeRight = r.length;
@@ -51,23 +60,24 @@ public class Sorter {
 		merge(left, right, A);
 	}
 	
+	/**
+	 * Quicksort
+	 * partition -> Partitions index and partially sorts according to a pivot value
+	 * quicksort -> the recursive quicksort algorithm
+	 * qsort     -> Wrapper function for quicksort
+	 * **/
+	
 	private static int partition(Comparable[] A, int start, int end){
-	    Random rand = new Random();
-	    int pivotInd = start + rand.nextInt(end - start);
-//	    int pivotInd = end;  //can replace with random here
+	    int pivotInd = end;  //can replace with random here
 		Comparable pivot = A[pivotInd];
 		int partIndex = start;
 		for(int i = start; i < end; i++){
 			if(A[i].compareTo(pivot) <= 0){
-				Comparable tmp = A[i];
-				A[i] = A[partIndex];
-				A[partIndex] = tmp;
+				swap(A, i, partIndex);
 				partIndex++;
 			}
 		}
-		Comparable tmp = A[partIndex];
-		A[partIndex] = A[pivotInd];
-		A[end] = tmp;
+		swap(A, partIndex, end);
 		return partIndex;
 	}
 	
@@ -82,5 +92,10 @@ public class Sorter {
 		int start = 0, end = arr.length - 1;
 		quicksort(arr, start, end);
 	}
-
+	
+	private static void swap(Comparable[] arr, int indA, int indB){
+		Comparable tmp = arr[indA];
+		arr[indA] = arr[indB];
+		arr[indB] = tmp;
+	}
 }
