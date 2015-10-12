@@ -32,6 +32,9 @@ To define the wanted function (e.g. for integration) one has to create a Class i
 6. Builds
 7. ~~Write this~~
 
+### Want something more complete?
+https://github.com/indy256/codelibrary
+
 Disclaimer
 -----------
 
