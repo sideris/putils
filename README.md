@@ -1,6 +1,6 @@
 #PUTILS
 
-A lightweight library in Java providing various auxiliary functions and utilities. Includes Math, Trees, Sorting, Searching and more fun stuff to be added.
+Containes a lightweight library in Java providing various auxiliary functions and utilities. Includes Math, Trees, Sorting, Searching and more fun stuff to be added.
 
 ####Why another Util library you say?
 
@@ -11,7 +11,7 @@ A lightweight library in Java providing various auxiliary functions and utilitie
 See above
 
 
-###Math
+###Java Math
 To define the wanted function (e.g. for integration) one has to create a Class implementing the interface Function:
 
       new Function() {
@@ -24,12 +24,12 @@ To define the wanted function (e.g. for integration) one has to create a Class i
 
 ###TODO
 
-1. Search
-2. Sort
-3. Trees
-4. Documentation
-5. Unit tests
-6. Builds
+1. Search(Java)
+2. Sort(Java)
+3. Trees(Java)
+4. Documentation(Java)
+5. Unit tests(Java)
+6. Builds(Java)
 7. ~~Write this~~
 
 ### Want something more complete?
